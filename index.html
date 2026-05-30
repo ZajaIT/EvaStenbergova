@@ -367,7 +367,34 @@ nav{
 
     .nuskin{
     padding:120px 0;
-    background:#fff;
+    background:#f7f3ee;
+}
+
+    .nuskin-image{
+    min-height:620px;
+    background:url('nuskin.webp');
+    background-size:cover;
+    background-position:center;
+}
+
+.nuskin-list{
+    list-style:none;
+    margin-top:20px;
+    padding:0;
+}
+
+.nuskin-list li{
+    color:#d6d6d6;
+    line-height:2;
+    position:relative;
+    padding-left:25px;
+}
+
+.nuskin-list li::before{
+    content:'✦';
+    position:absolute;
+    left:0;
+    color:#c8a76b;
 }
 
 .nuskin-content{
@@ -816,21 +843,41 @@ a odborné kosmetické poradenství.
 
     <section class="nuskin" id="nuskin">
 
-    <div class="container">
+    <div class="about-wrapper">
 
-        <div class="section-top">
+        <div class="about-text">
+
             <span>NUSKIN</span>
-            <h2>Produkty NuSkin</h2>
-        </div>
 
-        <div class="nuskin-content">
+            <h2>Galvanická žehlička</h2>
 
             <p>
-                Sem doplníme text o NuSkin,
-                produktech, technologiích a výhodách.
+                Zářivou, mladistvě vypadající pleť máte na dosah.
+                Musíte pouze stisknout ta správná tlačítka.
             </p>
 
+            <br>
+
+            <p>
+                Toto chytré a malé, avšak účinné anti-ageing systémové
+                zařízení v sobě spojuje přelomovou technologii
+                a anti-ageingové složky.
+            </p>
+
+            <br>
+
+            <p><strong>Proč si ji zamilujete:</strong></p>
+
+            <ul class="nuskin-list">
+                <li>Pleť vypadá mladší a revitalizovaná.</li>
+                <li>Snižuje výskyt jemných linek a vrásek.</li>
+                <li>Pomáhá mírnit viditelné známky stárnutí pleti.</li>
+                <li>Vyhlazuje projevy celulitidy.</li>
+            </ul>
+
         </div>
+
+        <div class="nuskin-image"></div>
 
     </div>
 
