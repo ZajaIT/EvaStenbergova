@@ -681,6 +681,60 @@ footer a:hover{
 body.modal-open{
     overflow:hidden;
 }
+    /* =========================
+   MOBILE MENU
+========================= */
+
+.hamburger{
+    display:none;
+}
+
+.mobile-menu{
+    position:fixed;
+    inset:0;
+    background:#031d14;
+    z-index:9999;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    gap:30px;
+
+    opacity:0;
+    visibility:hidden;
+    transition:.35s;
+}
+
+.mobile-menu.active{
+    opacity:1;
+    visibility:visible;
+}
+
+.mobile-menu a{
+    color:#fff;
+    font-size:26px;
+    letter-spacing:2px;
+    transition:.3s;
+}
+
+.mobile-menu a:hover{
+    color:#c8a76b;
+}
+
+.mobile-close{
+    position:absolute;
+    top:25px;
+    right:25px;
+
+    background:none;
+    border:none;
+
+    color:#fff;
+    font-size:42px;
+    cursor:pointer;
+}
 
 /* =========================
    MOBILE
@@ -746,6 +800,16 @@ body.modal-open{
 .vouchers-image img{
     height:auto;
 }
+    .hamburger{
+    display:block;
+    color:#fff;
+    font-size:34px;
+    cursor:pointer;
+}
+
+.nav-btn{
+    display:none;
+}
 
 }
 
@@ -807,10 +871,26 @@ body.modal-open{
             <a href="#contact" class="nav-btn">
                 OBJEDNAT SE
             </a>
+            <div class="hamburger">
+    ☰
+</div>
 
         </nav>
     </div>
 </header>
+
+    <div class="mobile-menu">
+
+    <button class="mobile-close">&times;</button>
+
+    <a href="#home">DOMŮ</a>
+    <a href="#services">SLUŽBY</a>
+    <a href="#about">O MNĚ</a>
+    <a href="#nuskin">NUSKIN</a>
+    <a href="#poukazy">POUKAZY</a>
+    <a href="#contact">KONTAKT</a>
+
+</div>
 
 <section class="hero" id="home">
 
@@ -1278,6 +1358,31 @@ document.addEventListener('keydown', function(e){
 document.body.classList.remove('modal-open');
 
     }
+
+});
+
+    const hamburger = document.querySelector('.hamburger');
+const mobileMenu = document.querySelector('.mobile-menu');
+const mobileClose = document.querySelector('.mobile-close');
+
+hamburger.addEventListener('click', () => {
+    mobileMenu.classList.add('active');
+    document.body.classList.add('modal-open');
+});
+
+mobileClose.addEventListener('click', () => {
+    mobileMenu.classList.remove('active');
+    document.body.classList.remove('modal-open');
+});
+
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+
+    link.addEventListener('click', () => {
+
+        mobileMenu.classList.remove('active');
+        document.body.classList.remove('modal-open');
+
+    });
 
 });
 
