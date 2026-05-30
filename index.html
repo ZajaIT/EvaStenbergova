@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>BodyVital - zdraví a krása</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Montserrat',sans-serif;
+    background:#f7f3ee;
+    color:#1d1d1d;
+    overflow-x:hidden;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+}
+
+.container{
+    width:min(1200px, 92%);
+    margin:auto;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:1000;
+    background:rgba(3,29,20,0.92);
+    backdrop-filter:blur(8px);
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 0;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
+
+.logo-icon{
+    width:58px;
+    height:58px;
+    border:1px solid #c8a76b;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#c8a76b;
+    font-weight:600;
+    font-size:24px;
+    font-family:'Cormorant Garamond', serif;
+}
+
+.logo-text h2{
+    color:#fff;
+    font-family:'Cormorant Garamond', serif;
+    font-size:54px;
+    font-weight:600;
+    line-height:0.9;
+}
+
+.logo-text span{
+    color:#c8a76b;
+    letter-spacing:2px;
+    font-size:12px;
+}
+
+.menu{
+    display:flex;
+    gap:42px;
+}
+
+.menu a{
+    color:#fff;
+    font-size:14px;
+    letter-spacing:1px;
+    transition:0.3s;
+}
+
+.menu a:hover{
+    color:#c8a76b;
+}
+
+.nav-btn{
+    background:#d3b078;
+    color:#fff;
+    padding:16px 28px;
+    border-radius:4px;
+    font-size:14px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.nav-btn:hover{
+    background:#be9758;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+
+    background:
+    linear-gradient(to right,
+    rgba(0,0,0,0.78) 0%,
+    rgba(0,0,0,0.50) 35%,
+    rgba(0,0,0,0.05) 100%),
+    url('hero.png');
+
+    background-size: cover;
+    background-position:center top;
+    background-repeat:no-repeat;
+}
+
+.hero::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        135deg,
+        rgba(0,40,25,0.25),
+        rgba(0,0,0,0.10)
+    );
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:620px;
+    padding-top:180px;
+}
+
+.hero h1{
+    font-family:'Cormorant Garamond', serif;
+    font-size:90px;
+    line-height:0.92;
+    color:#fff;
+    margin-bottom:24px;
+    font-weight:600;
+}
+
+.hero h1 span{
+    color:#c8a76b;
+}
+
+.hero p{
+    color:#f3f3f3;
+    font-size:21px;
+    line-height:1.8;
+    max-width:500px;
+    margin-bottom:45px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.btn-primary{
+    background:#d3b078;
+    color:#fff;
+    padding:18px 34px;
+    border-radius:4px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn-primary:hover{
+    background:#be9758;
+}
+
+.btn-secondary{
+    border:1px solid #c8a76b;
+    color:#fff;
+    padding:18px 34px;
+    border-radius:4px;
+    transition:0.3s;
+}
+
+.btn-secondary:hover{
+    background:#c8a76b;
+}
+
+.btn-primary::after,
+.btn-secondary::after{
+    content:'›';
+    margin-left:12px;
+    display:inline-block;
+    font-size:28px;
+    line-height:1;
+    transition:0.3s;
+}
+
+.btn-primary:hover::after,
+.btn-secondary:hover::after{
+    transform:translateX(4px);
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services{
+    padding:120px 0;
+    background:#f7f3ee;
+}
+
+.section-top{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.section-top span{
+    color:#b88c4b;
+    letter-spacing:2px;
+    font-size:14px;
+    font-weight:600;
+}
+
+.section-top h2{
+    font-family:'Playfair Display', serif;
+    font-size:58px;
+    margin-top:18px;
+    font-weight:500;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:35px;
+}
+
+.service-card{
+    background:#fff;
+    overflow:hidden;
+    border-radius:6px;
+    transition:0.4s;
+}
+
+.service-card:hover{
+    transform:translateY(-10px);
+}
+
+.service-card img{
+    height:430px;
+    width:100%;
+    object-fit:cover;
+}
+
+.service-content{
+    padding:35px 28px;
+    text-align:center;
+}
+
+.service-content h3{
+    font-family:'Montserrat',sans-serif;
+    font-size:28px;
+    margin-bottom:14px;
+    font-weight:600;
+    line-height:1.2;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.service-content p{
+    line-height:1.8;
+    color:#5c5c5c;
+}
+
+.service-more{
+    display:inline-block;
+    margin-top:20px;
+    color:#b88c4b;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.service-more:hover{
+    color:#8f6a34;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+    background:#031d14;
+    color:#fff;
+}
+
+.about-wrapper{
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    align-items:center;
+}
+
+.about-text{
+    padding:100px 80px;
+}
+
+.about-text span{
+    color:#c8a76b;
+    letter-spacing:2px;
+    font-size:14px;
+    font-weight:600;
+}
+
+.about-text h2{
+    font-family:'Playfair Display', serif;
+    font-size:58px;
+    line-height:1.05;
+    margin:22px 0 28px;
+    font-weight:500;
+}
+
+.about-text p{
+    color:#d6d6d6;
+    line-height:2;
+    font-size:17px;
+}
+
+.about-image{
+    min-height:620px;
+    background:url('https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1887&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+    padding:120px 0;
+    background:#f7f3ee;
+}
+
+.contact-box{
+    background:#fff;
+    padding:70px;
+    border-radius:8px;
+    box-shadow:0 10px 40px rgba(0,0,0,0.08);
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+}
+
+.contact-info h2{
+    font-family:'Playfair Display', serif;
+    font-size:54px;
+    margin-bottom:30px;
+    font-weight:500;
+}
+
+.contact-info p{
+    margin-bottom:18px;
+    color:#444;
+    line-height:1.8;
+}
+.contact-info a{
+    color:#b88c4b;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.contact-info a:hover{
+    color:#8f6a34;
+}
+
+.contact-form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    padding:18px;
+    border:1px solid #ddd;
+    font-family:'Montserrat',sans-serif;
+    font-size:15px;
+    border-radius:4px;
+    outline:none;
+}
+
+.contact-form textarea{
+    min-height:160px;
+    resize:none;
+}
+
+.contact-form button{
+    border:none;
+    cursor:pointer;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#02140f;
+    color:#bfbfbf;
+    padding:28px 0;
+    text-align:center;
+    font-size:14px;
+}
+
+footer a{
+    color:#c8a76b;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+footer a:hover{
+    color:#fff;
+}
+
+.modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.6);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    z-index:9999;
+}
+
+.modal-overlay.active{
+    display:flex;
+}
+
+.modal-box{
+    background:#fdfbf8;
+    width:min(700px,100%);
+    max-height:85vh;
+    overflow-y:auto;
+    padding:40px;
+    border-radius:10px;
+    position:relative;
+}
+
+.modal-box p{
+    line-height:1.9;
+    margin-bottom:20px;
+    color:#444;
+}
+
+.modal-box h2{
+    font-family:'Montserrat',sans-serif;
+    font-size:30px;
+    font-weight:600;
+    line-height:1.3;
+    margin-bottom:35px;
+    text-align:center;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+
+.modal-box ul{
+    list-style:none;
+    padding-left:0;
+    line-height:2;
+    margin:15px 0 25px;
+}
+
+.modal-box li{
+    position:relative;
+    padding-left:24px;
+}
+
+.modal-box li::before{
+    content:'✦';
+    position:absolute;
+    left:0;
+    color:#c8a76b;
+    font-size:14px;
+}
+
+.modal-box h3{
+    margin-top:35px;
+    margin-bottom:15px;
+    position:relative;
+    padding-bottom:12px;
+}
+
+.modal-box h3::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:60px;
+    height:1px;
+    background:#c8a76b;
+}
+
+.modal-close{
+    position:absolute;
+    top:15px;
+    right:20px;
+    border:none;
+    background:none;
+    font-size:32px;
+    cursor:pointer;
+}
+
+body.modal-open{
+    overflow:hidden;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:1100px){
+
+    .hero h1{
+        font-size:82px;
+    }
+
+    .section-top h2,
+    .about-text h2,
+    .contact-info h2{
+        font-size:54px;
+    }
+
+}
+
+@media(max-width:900px){
+
+    .menu{
+        display:none;
+    }
+
+    .hero{
+        min-height:auto;
+        padding:180px 0 120px;
+    }
+
+    .hero h1{
+        font-size:72px;
+    }
+
+    .service-grid{
+        grid-template-columns:1fr;
+    }
+
+    .about-wrapper,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .about-image{
+        min-height:420px;
+    }
+
+    .about-text{
+        padding:70px 30px;
+    }
+
+    .contact-box{
+        padding:40px 30px;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .logo-text h2{
+        font-size:38px;
+    }
+
+    .nav-btn{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:58px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .section-top h2,
+    .about-text h2,
+    .contact-info h2{
+        font-size:42px;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+
+            <a href="#home" class="logo">
+    <div class="logo-icon">BV</div>
+
+    <div class="logo-text">
+        <h2>BodyVital</h2>
+        <span>KOSMETICKÉ STUDIO</span>
+    </div>
+</a>
+
+            <div class="menu">
+    <a href="#home">DOMŮ</a>
+    <a href="#services">SLUŽBY</a>
+    <a href="#about">O MNĚ</a>
+    <a href="#contact">KONTAKT</a>
+</div>
+
+            <a href="#contact" class="nav-btn">
+                OBJEDNAT SE
+            </a>
+
+        </nav>
+    </div>
+</header>
+
+<section class="hero" id="home">
+
+        <div class="container">
+
+        <div class="hero-content">
+
+            <h1>
+    <span>Eva Stenbergová</span>
+</h1>
+
+            <p>
+    Komplexní péče o vaši pleť a tělo
+    s moderními technologiemi
+    pro viditelné výsledky ve Frýdku-Místku.
+</p>
+
+            <div class="hero-buttons">
+
+                <a href="#contact" class="btn-primary">
+                    OBJEDNAT SE
+                </a>
+
+                <a href="#services" class="btn-secondary">
+                    NAŠE SLUŽBY
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="services" id="services">
+
+    <div class="container">
+
+        <div class="section-top">
+            <span>NAŠE SLUŽBY</span>
+            <h2>Profesionální péče pro vaši krásu</h2>
+        </div>
+
+        <div class="service-grid">
+
+            <div class="service-card">
+
+                <img src="kosmetika.png">
+
+                <div class="service-content">
+                    <h3>Kosmetické ošetření</h3>
+
+                    <p>
+Péče o pleť zaměřená na regeneraci,
+omlazení a odstranění nedokonalostí.
+</p>
+
+<a href="#" class="service-more" data-modal="modal1">Zjistit více</a>
+                </div>
+
+            </div>
+
+            <div class="service-card">
+
+                <img src="lumispa.png">
+
+                <div class="service-content">
+                    <h3>Přístrojová kosmetika</h3>
+<p>
+
+                    Moderní technologie pro hloubkové čištění,
+lifting a revitalizaci pleti.
+</p>
+
+<a href="#" class="service-more" data-modal="modal2">Zjistit více</a>
+                </div>
+
+            </div>
+
+            <div class="service-card">
+
+                <img src="zehlicka1.png">
+
+                <div class="service-content">
+                    <h3>Doplňkové služby</h3>
+
+                    <p>
+Depilace, úprava obočí, masáže
+a odborné kosmetické poradenství.
+</p>
+
+<a href="#" class="service-more" data-modal="modal3">Zjistit více</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="about" id="about">
+
+    <div class="about-wrapper">
+
+        <div class="about-text">
+
+            <span>O MNĚ</span>
+
+            <h2>
+                Vaše krása je
+                moje poslání
+            </h2>
+
+            <p>
+                Nabízím profesionální péči
+                o pleť s důrazem na individuální přístup,
+                kvalitní produkty a moderní technologie.
+                Pomáhám klientkám cítit se krásně,
+                sebevědomě a přirozeně.
+            </p>
+
+        </div>
+
+        <div class="about-image"></div>
+
+    </div>
+
+</section>
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+            <div class="contact-grid">
+
+                <div class="contact-info">
+
+                    <h2>Kontakt</h2>
+
+                    <p><strong>Adresa:</strong><br>
+<a href="https://maps.app.goo.gl/xqMr5Je1z1H3C9QNA" target="_blank">
+    Jamnická 16, Frýdek-Místek
+</a>
+</p>
+
+<p><strong>Telefon:</strong><br>
+<a href="tel:+420603320121">
+    +420 603 320 121
+</a>
+</p>
+
+<p><strong>Email:</strong><br>
+<a href="mailto:eva-bodyvital@seznam.cz">
+    eva-bodyvital@seznam.cz
+</a>
+</p>
+
+                </div>
+
+                <form class="contact-form">
+
+                    <input type="text" placeholder="Vaše jméno">
+
+                    <input type="email" placeholder="Váš email">
+
+                    <textarea placeholder="Vaše zpráva"></textarea>
+
+                    <button class="btn-primary">
+                        ODESLAT ZPRÁVU
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    © 2026 Eva Stenbergová • Designed by
+    <a href="https://www.zajait.cz" target="_blank">ZajaIT</a>
+</footer>
+
+<div class="modal-overlay" id="modal1">
+    <div class="modal-box">
+        <button class="modal-close">&times;</button>
+
+        <h2>Kosmetické ošetření a omlazení pleti</h2>
+
+        <h3>Liftingové ošetření</h3>
+
+<p>
+Pomocí 100% retinolu, kolagenového matrixu,
+vypínacích ampulí a hydrogelových masek.
+Ošetření podporuje regeneraci pleti,
+zlepšuje její pružnost a přispívá k mladistvému vzhledu.
+</p>
+
+<h3>AHA chemický peeling</h3>
+
+<p>
+Omlazení pomocí 30% ovocných kyselin.
+Patří k nejstarším metodám intenzivní péče o pleť
+na pomezí klasické medicíny a kosmetiky.
+Chemický peeling omlazuje pleť nejen vizuálně,
+ale i biologicky. Vaše pleť bude krásnější,
+zářivější a mladší.
+</p>
+
+<h3>Profesionální kosmetická péče</h3>
+
+<p>
+Při ošetření používáme profesionální kosmetiku
+renomovaných evropských značek:
+</p>
+
+<ul>
+    <li>Germaine de Capuccini</li>
+    <li>Integra</li>
+    <li>Keenwell</li>
+    <li>Ainhoa</li>
+    <li>Henriette Faroche</li>
+    <li>SynCare</li>
+    <li>Janssen Cosmetics</li>
+</ul>
+
+<p>
+Součástí služeb je také odborné poradenství
+a možnost zakoupení přípravků pro domácí péči.
+</p>
+    </div>
+</div>
+
+<div class="modal-overlay" id="modal2">
+    <div class="modal-box">
+        <button class="modal-close">&times;</button>
+
+        <h2>Přístrojová kosmetika</h2>
+
+        <h3>Galvanická žehlička</h3>
+
+<p>
+Moderní kosmetická technologie využívaná pro hloubkové
+zapracování aktivních látek do pleti. Ošetření podporuje
+hydrataci, regeneraci a celkové zlepšení vzhledu pokožky.
+</p>
+
+<h3>Laserové ošetření</h3>
+
+<p>
+Laserové ošetření má výrazný protizánětlivý účinek,
+zlepšuje pružnost a pevnost pleti, podporuje tvorbu
+kolagenu a napomáhá rychlejšímu hojení drobných
+nedokonalostí a jizviček po akné. Současně zlepšuje
+mikrocirkulaci a lymfatický tok.
+</p>
+
+<p>
+K ošetření používáme profesionální přístroj Laser LR-25.
+</p>
+
+<h3>Mikroabraze</h3>
+
+<p>
+Šetrná a kontrolovaná mikrodermabraze s viditelnými
+výsledky již po prvním ošetření. Pomáhá redukovat
+vrásky, jizvičky po akné, pigmentové skvrny i další
+nedokonalosti pleti.
+</p>
+
+<p>
+Ošetření provádíme přístrojem Silkdermic.
+</p>
+
+<h3>Ošetření přístrojem MAIG 03</h3>
+
+<p>
+Elektroestetické ošetření, které zvyšuje efektivitu
+běžné kosmetické péče. Podporuje regeneraci,
+hydrataci, revitalizaci a celkové zlepšení stavu pleti.
+</p>
+
+<h3>LumiSpa technologie</h3>
+
+<p>
+Moderní technologie pro hloubkové čištění,
+masáž a regeneraci pleti. Pomáhá udržovat
+pokožku svěží, zářivou a zdravě vypadající.
+</p>
+    </div>
+</div>
+
+<div class="modal-overlay" id="modal3">
+    <div class="modal-box">
+        <button class="modal-close">&times;</button>
+
+        <h2>Doplňkové kosmetické služby</h2>
+
+        <h3>Mikromasáže očního okolí</h3>
+
+<p>
+Oční okolí patří k nejjemnějším a nejcitlivějším
+partiím obličeje, a proto vyžaduje zvláštní péči.
+Mikromasáž pomáhá omezovat tvorbu a prohlubování
+vrásek, redukuje váčky pod očima a podporuje
+prokrvení a hydrataci pokožky.
+</p>
+
+<p>
+Součástí ošetření mohou být také vliesové
+a detoxikační oční náplasti, které přispívají
+k osvěžení a regeneraci očního okolí.
+Pokožka působí odpočatěji, svěžeji a rozzářeně.
+</p>
+
+<h3>Další kosmetické služby</h3>
+
+<ul>
+    <li>Depilace obličeje a končetin</li>
+    <li>Barvení a formování obočí</li>
+    <li>Kosmetické masáže</li>
+    <li>Poradenství pro domácí péči</li>
+    <li>Prodej profesionální kosmetiky</li>
+</ul>
+    </div>
+</div>
+
+<script>
+
+document.querySelectorAll('.service-more').forEach(btn => {
+
+    btn.addEventListener('click', function(e){
+
+        e.preventDefault();
+
+        const modalId = this.dataset.modal;
+
+        document.getElementById(modalId)
+    .classList.add('active');
+
+document.body.classList.add('modal-open');
+    });
+
+});
+
+document.querySelectorAll('.modal-close').forEach(btn => {
+
+    btn.addEventListener('click', function(){
+
+        this.closest('.modal-overlay')
+    .classList.remove('active');
+
+document.body.classList.remove('modal-open');
+
+    });
+
+});
+
+document.querySelectorAll('.modal-overlay').forEach(modal => {
+
+    modal.addEventListener('click', function(e){
+
+        if(e.target === this){
+
+            this.classList.remove('active');
+
+document.body.classList.remove('modal-open');
+
+        }
+
+    });
+
+});
+
+document.addEventListener('keydown', function(e){
+
+    if(e.key === 'Escape'){
+
+        document.querySelectorAll('.modal-overlay')
+    .forEach(modal => modal.classList.remove('active'));
+
+document.body.classList.remove('modal-open');
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
