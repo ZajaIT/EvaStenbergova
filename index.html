@@ -370,33 +370,31 @@ nav{
     background:#f7f3ee;
 }
 
-    .nuskin-image{
-    min-height:620px;
+    .nuskin-banner{
+    height:500px;
     background:url('nuskin.webp');
-    background-size:contain;
-    background-repeat:no-repeat;
+    background-size:cover;
     background-position:center;
-    background-color:#e7c4c9;
+    border-radius:10px;
+    margin-bottom:60px;
 }
 
 .nuskin-list{
     list-style:none;
-    margin-top:20px;
     padding:0;
+    margin-top:20px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
 }
 
 .nuskin-list li{
-    color:#d6d6d6;
-    line-height:2;
-    position:relative;
-    padding-left:25px;
-}
-
-.nuskin-list li::before{
-    content:'✦';
-    position:absolute;
-    left:0;
-    color:#c8a76b;
+    background:#fff;
+    padding:22px;
+    border-radius:8px;
+    color:#333;
+    box-shadow:0 5px 20px rgba(0,0,0,.06);
+    line-height:1.7;
 }
 
 .nuskin-content{
@@ -405,10 +403,25 @@ nav{
     text-align:center;
 }
 
+.nuskin-intro{
+    font-size:28px;
+    line-height:1.6;
+    font-weight:500;
+    color:#1d1d1d;
+    margin-bottom:30px;
+}
+
 .nuskin-content p{
     font-size:18px;
     line-height:2;
     color:#555;
+}
+
+.nuskin-content h3{
+    margin-top:45px;
+    margin-bottom:30px;
+    font-size:28px;
+    color:#1d1d1d;
 }
 
 /* =========================
@@ -852,37 +865,28 @@ a odborné kosmetické poradenství.
             <h2>Galvanická žehlička</h2>
         </div>
 
-        <div class="about-wrapper">
+        <div class="nuskin-banner"></div>
 
-            <div class="about-text">
+        <div class="nuskin-content">
 
-                <p>
-                    Zářivou, mladistvě vypadající pleť máte na dosah.
-                    Musíte pouze stisknout ta správná tlačítka.
-                </p>
+            <p class="nuskin-intro">
+                Zářivou, mladistvě vypadající pleť máte na dosah.
+                Musíte pouze stisknout ta správná tlačítka.
+            </p>
 
-                <br>
+            <p>
+                Toto chytré a malé, avšak účinné anti-ageing systémové zařízení
+                v sobě spojuje přelomovou technologii a anti-ageingové složky.
+            </p>
 
-                <p>
-                    Toto chytré a malé, avšak účinné anti-ageing systémové
-                    zařízení v sobě spojuje přelomovou technologii
-                    a anti-ageingové složky.
-                </p>
+            <h3>Proč si ji zamilujete</h3>
 
-                <br>
-
-                <p><strong>Proč si ji zamilujete:</strong></p>
-
-                <ul class="nuskin-list">
-                    <li>Pleť vypadá mladší a revitalizovaná.</li>
-                    <li>Snižuje výskyt jemných linek a vrásek.</li>
-                    <li>Pomáhá mírnit viditelné známky stárnutí pleti.</li>
-                    <li>Vyhlazuje projevy celulitidy.</li>
-                </ul>
-
-            </div>
-
-            <div class="nuskin-image"></div>
+            <ul class="nuskin-list">
+                <li>Pleť vypadá mladší a revitalizovaná</li>
+                <li>Snižuje výskyt jemných linek a vrásek</li>
+                <li>Pomáhá mírnit viditelné známky stárnutí pleti</li>
+                <li>Vyhlazuje projevy celulitidy</li>
+            </ul>
 
         </div>
 
