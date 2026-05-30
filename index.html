@@ -388,13 +388,24 @@ nav{
     gap:20px;
 }
 
+.nuskin-list{
+    list-style:none;
+    padding:0;
+    margin-top:20px;
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px 50px;
+}
+
 .nuskin-list li{
-    background:#fff;
-    padding:22px;
-    border-radius:8px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+
     color:#333;
-    box-shadow:0 5px 20px rgba(0,0,0,.06);
-    line-height:1.7;
+    font-size:18px;
+    line-height:1.6;
 }
 
 .nuskin-content{
