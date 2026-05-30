@@ -442,17 +442,18 @@ nav{
 .vouchers-wrapper{
     display:grid;
     grid-template-columns:1fr 1.1fr;
-    align-items:center;
+    align-items:stretch;
 }
 
 .vouchers-image{
-    padding:70px;
+    height:100%;
 }
 
 .vouchers-image img{
     width:100%;
-    border-radius:8px;
-    box-shadow:0 20px 50px rgba(0,0,0,0.25);
+    height:100%;
+    object-fit:cover;
+    display:block;
 }
 
 .vouchers-text{
