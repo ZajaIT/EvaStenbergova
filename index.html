@@ -430,6 +430,77 @@ nav{
     width:120px;
     background:#c8a76b;
 }
+    /* =========================
+   VOUCHERS
+========================= */
+
+.vouchers{
+    background:#031d14;
+    color:#fff;
+}
+
+.vouchers-wrapper{
+    display:grid;
+    grid-template-columns:1fr 1.1fr;
+    align-items:center;
+}
+
+.vouchers-image{
+    padding:70px;
+}
+
+.vouchers-image img{
+    width:100%;
+    border-radius:8px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.25);
+}
+
+.vouchers-text{
+    padding:100px 80px;
+}
+
+.vouchers-text span{
+    color:#c8a76b;
+    letter-spacing:2px;
+    font-size:14px;
+    font-weight:600;
+}
+
+.vouchers-text h2{
+    font-family:'Playfair Display', serif;
+    font-size:58px;
+    line-height:1.05;
+    margin:22px 0 28px;
+    font-weight:500;
+}
+
+.vouchers-text p{
+    color:#d6d6d6;
+    line-height:2;
+    font-size:17px;
+    margin-bottom:35px;
+}
+
+.voucher-btn{
+    display:inline-block;
+    background:#d3b078;
+    color:#fff;
+    padding:18px 34px;
+    border-radius:4px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.voucher-btn:hover{
+    background:#be9758;
+}
+
+.voucher-btn::after{
+    content:'›';
+    margin-left:12px;
+    font-size:28px;
+    vertical-align:middle;
+}
 
 /* =========================
    CONTACT
@@ -721,6 +792,7 @@ body.modal-open{
     <a href="#services">SLUŽBY</a>
     <a href="#about">O MNĚ</a>
     <a href="#nuskin">NuSkin</a>
+    <a href="#poukazy">POUKAZY</a>
     <a href="#contact">KONTAKT</a>
 </div>
 
@@ -893,6 +965,45 @@ Redukce vrásek &nbsp; ✦ &nbsp;
 Anti-age efekt &nbsp; ✦ &nbsp;
 Vyhlazení pokožky
 </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <section class="vouchers" id="poukazy">
+
+    <div class="vouchers-wrapper">
+
+        <div class="vouchers-image">
+            <img src="voucher.png" alt="Dárkový poukaz">
+        </div>
+
+        <div class="vouchers-text">
+
+            <span>DÁRKOVÉ POUKAZY</span>
+
+            <h2>
+                Darujte krásu
+                a péči
+            </h2>
+
+            <p>
+                Hledáte elegantní dárek pro ženu, která si zaslouží chvíli
+                odpočinku a péče? Dárkový poukaz BodyVital je krásným
+                způsobem, jak potěšit své blízké profesionálním kosmetickým
+                ošetřením, přístrojovou péčí nebo relaxačními procedurami.
+            </p>
+
+            <p>
+                Poukaz lze vystavit na libovolnou částku nebo konkrétní
+                ošetření dle vašeho přání.
+            </p>
+
+            <a href="#contact" class="voucher-btn">
+                OBJEDNAT POUKAZ
+            </a>
 
         </div>
 
