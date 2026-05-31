@@ -1037,7 +1037,7 @@ body.modal-open{
 
     <div class="container">
 
-        <div class="section-top reveal">
+        <div class="section-top">
             <span>NAŠE SLUŽBY</span>
             <h2>Profesionální péče pro vaši krásu</h2>
         </div>
@@ -1565,6 +1565,12 @@ form.addEventListener('submit', async (e) => {
 
     }
 
+});
+
+    document.querySelectorAll(
+'.hero-content, .section-top, .service-card, .about-text, .nuskin-banner, .nuskin-content, .vouchers-image, .vouchers-text, .contact-box'
+).forEach(el => {
+    el.classList.add('reveal');
 });
 
     const reveals = document.querySelectorAll('.reveal');
