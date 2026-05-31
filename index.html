@@ -1189,17 +1189,42 @@ Vyhlazení pokožky
 
                 </div>
 
-                <form class="contact-form">
+                <form
+    class="contact-form"
+    action="https://formspree.io/f/mbdbepal"
+    method="POST"
+>
 
-                    <input type="text" placeholder="Vaše jméno">
+                    <input
+    type="text"
+    name="jmeno"
+    placeholder="Vaše jméno"
+    required
+>
 
-                    <input type="email" placeholder="Váš email">
+<input
+    type="tel"
+    name="telefon"
+    placeholder="Telefon"
+    required
+>
 
-                    <textarea placeholder="Vaše zpráva"></textarea>
+<input
+    type="email"
+    name="email"
+    placeholder="Váš email"
+    required
+>
 
-                    <button class="btn-primary">
-                        ODESLAT ZPRÁVU
-                    </button>
+<textarea
+    name="zprava"
+    placeholder="Vaše zpráva"
+    required
+></textarea>
+
+                    <button type="submit" class="btn-primary">
+    ODESLAT ZPRÁVU
+</button>
 
                 </form>
 
