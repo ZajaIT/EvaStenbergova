@@ -770,6 +770,13 @@ body.modal-open{
 .gdpr-note a:hover{
     text-decoration:underline;
 }
+    #form-message{
+    margin-top:15px;
+    text-align:center;
+    font-size:14px;
+    font-weight:600;
+    color:#2d6a4f;
+}
 
 /* =========================
    MOBILE
@@ -1206,6 +1213,7 @@ Vyhlazení pokožky
                 </div>
 
                 <form
+    id="contact-form"
     class="contact-form"
     action="https://formspree.io/f/mbdbepal"
     method="POST"
@@ -1247,6 +1255,7 @@ Vyhlazení pokožky
                     <button type="submit" class="btn-primary">
     ODESLAT ZPRÁVU
 </button>
+                    <p id="form-message"></p>
 
                 </form>
 
@@ -1490,6 +1499,39 @@ document.querySelectorAll('.mobile-menu a').forEach(link => {
         document.body.classList.remove('modal-open');
 
     });
+
+});
+
+    const form = document.getElementById('contact-form');
+const formMessage = document.getElementById('form-message');
+
+form.addEventListener('submit', async (e) => {
+
+    e.preventDefault();
+
+    const data = new FormData(form);
+
+    const response = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+    });
+
+    if(response.ok){
+
+        form.reset();
+
+        formMessage.textContent =
+            'Vaše zpráva byla odeslána.';
+
+    } else {
+
+        formMessage.textContent =
+            'Odeslání se nezdařilo. Zkuste to prosím znovu.';
+
+    }
 
 });
 
