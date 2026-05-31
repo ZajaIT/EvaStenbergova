@@ -754,6 +754,22 @@ body.modal-open{
     font-size:42px;
     cursor:pointer;
 }
+    .gdpr-note{
+    font-size:13px;
+    color:#777;
+    line-height:1.6;
+    margin-top:-5px;
+    margin-bottom:5px;
+}
+
+.gdpr-note a{
+    color:#b88c4b;
+    text-decoration:none;
+}
+
+.gdpr-note a:hover{
+    text-decoration:underline;
+}
 
 /* =========================
    MOBILE
@@ -1221,6 +1237,12 @@ Vyhlazení pokožky
     placeholder="Vaše zpráva"
     required
 ></textarea>
+                    <p class="gdpr-note">
+    Odesláním souhlasíte se
+    <a href="gdpr.html" target="_blank">
+        zpracováním osobních údajů
+    </a>.
+</p>
 
                     <button type="submit" class="btn-primary">
     ODESLAT ZPRÁVU
