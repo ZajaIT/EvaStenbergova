@@ -1420,6 +1420,12 @@ Pokožka působí odpočatěji, svěžeji a rozzářeně.
 
 <script>
 
+    if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
+window.scrollTo(0, 0);
+
 document.querySelectorAll('.service-more').forEach(btn => {
 
     btn.addEventListener('click', function(e){
